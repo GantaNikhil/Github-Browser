@@ -30,7 +30,7 @@ An application to view your favorite repos in one place.You can add owner/organi
 
     
 
-API Documentation: 
+API Documentation : 
 
 [Postman](https://www.getpostman.com/collections/65f61530c1e52fe8ff76)
     
