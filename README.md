@@ -24,7 +24,7 @@ An application to view your favorite repos in one place.You can add owner/organi
 
 * Android Studio (Java + XML)
 * Material UI Components
-* Firebase Firestore
+* Firebase Firestore 
 * okhttp
 * Volley
 
