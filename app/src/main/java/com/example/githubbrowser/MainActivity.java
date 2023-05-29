@@ -72,9 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 urls = new ArrayList<>();
                 data = new ArrayList<>();
                 docids=new ArrayList<>();
-                for (DocumentSnapshot dc : value.getDocuments()) {
-                    urls.add(REPO_URL + dc.get("owner") + "/" + dc.get("repo"));
-                    docids.add(dc.get("DocId").toString());
+                if (value != null) {
+                    for (DocumentSnapshot dc : value.getDocuments()) {
+                        urls.add(REPO_URL + dc.get("owner") + "/" + dc.get("repo"));
+                        docids.add(dc.get("DocId").toString());
+                    }
                 }
                 if(urls.size()>0)
                 {
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onResponse(JSONObject response) {
                             try {
 
+                                Log.d("Nikhill2",response.toString());
                                 ModelClass o=new ModelClass();
                                 o.setRepo_name(response.getString("name"));
                                 o.setDescription(response.getString("description"));
@@ -103,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                                 adapter.notifyDataSetChanged();
 
                             } catch (JSONException e) {
+                                Log.d("Nikhill",e.toString());
                                 e.printStackTrace();
                             }
                         }
